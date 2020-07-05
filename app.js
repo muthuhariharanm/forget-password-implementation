@@ -23,8 +23,8 @@ app.set('views', __dirname + '/pages');
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'mail319me@gmail.com',
-        pass: 'New@1999'
+        user: 'your@email.com',
+        pass: 'your-email-pass'
     }
 });
 
@@ -52,7 +52,7 @@ app.post('/forgot', (req, res) => {
     req.session[email] = {email:email,key:key,set:true} ;
 
     var mailOptions = {
-        from: 'mail319me@gmail.com',
+        from: 'your@email.com',
         to: email,
         subject: 'Password Reset',
         text: 'Your key to reset password is : ' + key
